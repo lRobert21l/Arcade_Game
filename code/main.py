@@ -33,7 +33,7 @@ class Player(pygame.sprite.Sprite):
             self.laser_shoot_time = pygame.time.get_ticks()
 
         keys = pygame.key.get_pressed()
-        self.direction.x = int(keys[pygame.K_d]) - int(keys[pygame.K_a]) 
+        self.direction.x = int(keys[pygame.K_d]) - int(keys[pygame.K_a])
         self.direction.y = int(keys[pygame.K_s]) - int(keys[pygame.K_w])
         self_direction = self.direction.normalize() if self.direction else self.direction # normalize the direction vector(diagonal movement)
         self.rect.center += self_direction * self.speed * dt
